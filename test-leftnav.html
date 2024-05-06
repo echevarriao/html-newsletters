@@ -1,0 +1,137 @@
+<html>
+<head>
+<title></title>
+<script language = "javascript" src = "../js/jquery/jquery-1.11.0.min.js"></script>
+<style type = "text/css">
+    
+#leftNavId, .sub-menu{
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+#leftNavId li, .sub-menu{
+    
+    display: inline;
+    
+}
+#leftNavId li a, .sub-menu li a{
+    
+    display: block;
+    
+}
+
+
+/* hide all the sub-menus by default */
+    
+#leftNavId .sub-menu {
+    
+    display: none;
+    
+}
+
+#leftNavId .current-menu-item{
+    
+    background-color: #00f;
+    
+}
+
+/* only display the current sub-menu item */
+
+#leftNavId .current-menu-item .sub-menu{
+    
+    display: block;
+    
+}
+
+#leftNavId .sub-menu{
+    
+    background-color: #a1a1a1;
+    
+}
+    
+</style>
+<script language = "javascript">
+    
+    $(document).ready(function(){
+    
+    $("#leftNavId li").click(function(argv){
+
+        // get index of current clicked LI
+    
+        var clickedLi = $("#leftNavId li").index(this);
+        
+        // get the ID name of the current LI that was clicked 
+
+        var currentLi = "#" + $("#leftNavId li").get(clickedLi).id;
+        
+        // get the class name of the current item clicked
+        
+        var classNameInf = $(currentLi).attr("class");
+        
+        // define pattern
+        
+        var exp = /menu-item-has-children/i;
+        
+        // sub-menu to toggle, if found
+        
+        var subMenu = null;
+        
+        // lets test to see if the item has a child menu pattern
+        // if it does, lets use the jQuery slideToggle() method
+        // also lets prevent it from triggering the default action when clicked
+        
+        if (exp.test(classNameInf)) {
+
+        subMenu = currentLi + " .sub-menu";
+        
+        $(subMenu).slideToggle();
+        argv.preventDefault();
+            
+        }
+
+        // lets get out of here
+        
+        return ;
+
+    });
+        
+    });
+    
+</script>
+</head>
+<body>
+<div id = "left-menu">
+<ul id="leftNavId" class="menu"><li id="menu-item-428" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-428"><a href="http://www.cdee.uconn.edu/">Continuing and Distance Engineering Education»</a>
+<ul class="sub-menu">
+	<li id="menu-item-430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-430"><a href="http://www.cdee.uconn.edu/continuing-and-distance-engineering-education/introductions-advantages">Advantages</a></li>
+	<li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="http://www.cdee.uconn.edu/continuing-and-distance-engineering-education/comparisons">Comparisons</a></li>
+</ul>
+</li>
+<li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-431"><a href="http://www.cdee.uconn.edu/meng">Master of Engineering»</a>
+<ul class="sub-menu">
+	<li id="menu-item-453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453"><a href="http://www.cdee.uconn.edu/meng/advantages-3">Advantages</a></li>
+	<li id="menu-item-435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-435"><a href="http://www.cdee.uconn.edu/meng/comparisons">Comparisons</a></li>
+	<li id="menu-item-432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-432"><a href="http://www.cdee.uconn.edu/meng/admissions">Admissions</a></li>
+	<li id="menu-item-448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448"><a href="http://www.cdee.uconn.edu/meng/concentrations">Requirements &#038; Concentrations</a></li>
+	<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-433"><a href="http://www.cdee.uconn.edu/meng/course-descriptions">Course Descriptions</a></li>
+	<li id="menu-item-434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-434"><a href="http://www.cdee.uconn.edu/meng/current-students">Current Students</a></li>
+	<li id="menu-item-616" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-616"><a href="http://www.cdee.uconn.edu/meng/spring-2014-offerings">Spring 2014 Course Offerings</a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-436"><a href="http://www.cdee.uconn.edu/meng/frequently-asked-questions">FAQs</a></li>
+</ul>
+</li>
+<li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-60 current_page_item menu-item-has-children menu-item-438"><a href="http://www.cdee.uconn.edu/non-degree">Non-Degree»</a>
+<ul class="sub-menu">
+	<li id="menu-item-451" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-451"><a href="http://www.cdee.uconn.edu/non-degree/advantages">Advantages</a></li>
+	<li id="menu-item-441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-441"><a href="http://www.cdee.uconn.edu/non-degree/comparisons">Comparisons</a></li>
+	<li id="menu-item-439" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-439"><a href="http://www.cdee.uconn.edu/non-degree/admissions">Admissions</a></li>
+	<li id="menu-item-440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-440"><a href="http://www.cdee.uconn.edu/non-degree/current-students">Current Students</a></li>
+</ul>
+</li>
+<li id="menu-item-456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-456"><a href="http://www.cdee.uconn.edu/corporate-education">Corporate Education</a></li>
+<li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-707"><a href="http://www.cdee.uconn.edu/forms">Forms</a></li>
+<li id="menu-item-447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-447"><a href="http://www.cdee.uconn.edu/events">Events</a></li>
+</ul></div>
+</body>
+</html>
